@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KFAR Project - Complete Achievement Dashboard</title>
+    <title>KFAR Achievement Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -58,9 +58,95 @@
             border-radius: 50%;
             z-index: 1;
         }
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-link {
+            transition: all 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #478c0b;
+            transform: translateY(-1px);
+        }
+        .nav-link.active {
+            color: #478c0b;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
+    <!-- Navigation Menu -->
+    <nav class="nav-menu sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo/Home -->
+                <a href="index.html" class="flex items-center gap-2 text-xl font-bold text-gray-800 hover:text-kfar-green transition">
+                    <i class="fas fa-leaf text-kfar-green"></i>
+                    KFAR Reports
+                </a>
+                
+                <!-- Menu Items -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html" class="nav-link text-gray-600">
+                        <i class="fas fa-home mr-1"></i> Home
+                    </a>
+                    <a href="KFAR_ACHIEVEMENT_DASHBOARD.html" class="nav-link active text-gray-600">
+                        <i class="fas fa-trophy mr-1"></i> Dashboard
+                    </a>
+                    <a href="KFAR_COMPLETE_ACHIEVEMENT_REPORT.html" class="nav-link text-gray-600">
+                        <i class="fas fa-file-alt mr-1"></i> Full Report
+                    </a>
+                    <a href="SENDGRID_COMPLETE_REVIEW.html" class="nav-link text-gray-600">
+                        <i class="fas fa-envelope mr-1"></i> Email System
+                    </a>
+                    <a href="KFAR_LIVE_DASHBOARD.html" class="nav-link text-gray-600">
+                        <i class="fas fa-chart-line mr-1"></i> Live Status
+                    </a>
+                </div>
+                
+                <!-- External Links -->
+                <div class="flex items-center gap-4">
+                    <a href="https://kfarmarket.com" target="_blank" class="text-gray-600 hover:text-blue-600 transition">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://github.com/bakiel/kfar-project-reports" target="_blank" class="text-gray-600 hover:text-gray-800 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden absolute right-6 top-5">
+                <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-gray-800">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-gray-200">
+            <div class="px-6 py-4 space-y-2">
+                <a href="index.html" class="block py-2 text-gray-600 hover:text-kfar-green">
+                    <i class="fas fa-home mr-2"></i> Home
+                </a>
+                <a href="KFAR_ACHIEVEMENT_DASHBOARD.html" class="block py-2 text-kfar-green font-semibold">
+                    <i class="fas fa-trophy mr-2"></i> Achievement Dashboard
+                </a>
+                <a href="KFAR_COMPLETE_ACHIEVEMENT_REPORT.html" class="block py-2 text-gray-600 hover:text-kfar-green">
+                    <i class="fas fa-file-alt mr-2"></i> Complete Report
+                </a>
+                <a href="SENDGRID_COMPLETE_REVIEW.html" class="block py-2 text-gray-600 hover:text-kfar-green">
+                    <i class="fas fa-envelope mr-2"></i> Email System
+                </a>
+                <a href="KFAR_LIVE_DASHBOARD.html" class="block py-2 text-gray-600 hover:text-kfar-green">
+                    <i class="fas fa-chart-line mr-2"></i> Live Status
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Header -->
     <div class="gradient-kfar text-white p-6">
         <div class="max-w-7xl mx-auto">
@@ -266,7 +352,7 @@
                     <div class="p-4 space-y-2">
                         <div class="flex items-center gap-2 text-sm">
                             <i class="fas fa-check text-green-500"></i>
-                            <span>Gmail API connected</span>
+                            <span>Google Workspace API connected</span>
                         </div>
                         <div class="flex items-center gap-2 text-sm">
                             <i class="fas fa-check text-green-500"></i>
@@ -315,7 +401,7 @@
                             <i class="fab fa-google text-2xl text-red-500"></i>
                         </div>
                         <p class="text-sm font-semibold">Email System</p>
-                        <p class="text-xs text-gray-600 mt-1">SendGrid + Gmail</p>
+                        <p class="text-xs text-gray-600 mt-1">SendGrid + Google Workspace</p>
                     </div>
                 </div>
                 <div class="mt-6 text-center">
@@ -441,7 +527,7 @@
                     <div class="timeline-dot"></div>
                     <div class="ml-12">
                         <div class="font-semibold">Email Integration</div>
-                        <div class="text-sm text-gray-600">Gmail API + SendGrid configuration</div>
+                        <div class="text-sm text-gray-600">Google Workspace API + SendGrid configuration</div>
                     </div>
                 </div>
                 <div class="relative mb-6">
@@ -539,6 +625,11 @@
     </div>
 
     <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
         function copyAdminCommand() {
             const command = `curl -H "Authorization: Bearer my-secure-kfar-admin-key-2025_shalom" \\
   https://kfarmarket.com/api/admin/submissions`;
@@ -555,7 +646,7 @@ From blocked WhatsApp account → Complete marketplace solution
 🟢 SYSTEMS OPERATIONAL:
 • Website: https://kfarmarket.com
 • Facebook: https://www.facebook.com/profile.php?id=100088170009515
-• Email System: Gmail API + SendGrid ✅
+• Email System: Google Workspace API + SendGrid ✅
 • Forms: Tested & Working ✅
 • Business Verification: In Review (48hrs)
 
