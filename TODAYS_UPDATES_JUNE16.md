@@ -35,7 +35,7 @@ Using actual KFAR brand assets:
 ## 📁 Files Created/Updated
 
 ### New Files
-- `email-design-showcase.html` - Interactive email template viewer
+- `email-contrast-fixed.html` - Interactive email template viewer
 - `EMAIL_TEMPLATE_IMPROVEMENTS.md` - Complete design guide
 - `email-templates-live-preview.html` - Live preview of templates
 - `kfar-branded-email-templates-improved.js` - Enhanced templates

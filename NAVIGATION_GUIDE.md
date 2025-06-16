@@ -9,7 +9,7 @@
 ## 📧 Email System Reports
 
 ### Primary Reports
-1. **[Email Design Showcase](email-design-showcase.html)**
+1. **[Email Design Showcase](email-contrast-fixed.html)**
    - Interactive preview of all email templates
    - Shows Welcome, Order, Marketing, and Support emails
    - Links to: [Home](index.html) | [Contrast Fixed Templates](email-contrast-fixed.html)
