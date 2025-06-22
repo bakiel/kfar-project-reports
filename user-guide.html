@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFAR Marketplace - Complete User Guide</title>
+    <meta name="description" content="Comprehensive user manual for customers, vendors, and administrators">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .toc-item:hover {
+            background-color: #f3f4f6;
+            padding-left: 1.5rem;
+            transition: all 0.2s ease;
+        }
+        .section-card {
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 80px;
+        }
+        @media (max-width: 768px) {
+            .sticky-nav {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div class="gradient-bg text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-4">📚 KFAR Marketplace User Guide</h1>
+                <p class="text-xl mb-6">Complete Manual for All Users</p>
+                <div class="flex justify-center space-x-4">
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                        <i class="fas fa-user mr-2"></i>Customers
+                    </span>
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                        <i class="fas fa-store mr-2"></i>Vendors
+                    </span>
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                        <i class="fas fa-user-shield mr-2"></i>Admins
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Start Cards -->
+    <section class="py-8 -mt-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center section-card">
+                    <i class="fas fa-user text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="font-bold mb-2">Customer Guide</h3>
+                    <p class="text-sm text-gray-600 mb-4">Shop, order, and manage your account</p>
+                    <a href="#customer-guide" class="text-blue-600 hover:text-blue-700 font-medium">
+                        Get Started <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center section-card">
+                    <i class="fas fa-store text-4xl text-green-600 mb-4"></i>
+                    <h3 class="font-bold mb-2">Vendor Guide</h3>
+                    <p class="text-sm text-gray-600 mb-4">Manage products and process orders</p>
+                    <a href="#vendor-guide" class="text-green-600 hover:text-green-700 font-medium">
+                        Get Started <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center section-card">
+                    <i class="fas fa-user-shield text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="font-bold mb-2">Admin Guide</h3>
+                    <p class="text-sm text-gray-600 mb-4">Platform management and analytics</p>
+                    <a href="#admin-guide" class="text-purple-600 hover:text-purple-700 font-medium">
+                        Get Started <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Table of Contents -->
+            <aside class="lg:w-1/4">
+                <div class="bg-white rounded-lg shadow-lg p-6 sticky-nav">
+                    <h2 class="font-bold text-lg mb-4">📑 Table of Contents</h2>
+                    <nav class="space-y-2">
+                        <a href="#getting-started" class="block py-2 px-3 rounded toc-item">
+                            <i class="fas fa-rocket mr-2 text-gray-500"></i>Getting Started
+                        </a>
+                        <a href="#customer-guide" class="block py-2 px-3 rounded toc-item">
+                            <i class="fas fa-user mr-2 text-blue-500"></i>Customer Guide
+                        </a>
+                        <a href="#vendor-guide" class="block py-2 px-3 rounded toc-item">
+                            <i class="fas fa-store mr-2 text-green-500"></i>Vendor Guide
+                        </a>
+                        <a href="#admin-guide" class="block py-2 px-3 rounded toc-item">
+                            <i class="fas fa-user-shield mr-2 text-purple-500"></i>Admin Guide
+                        </a>
+                        <a href="#mobile-features" class="block py-2 px-3 rounded toc-item">
+                            <i class="fas fa-mobile-alt mr-2 text-orange-500"></i>Mobile Features
+                        </a>
+                        <a href="#troubleshooting" class="block py-2 px-3 rounded toc-item">
+                            <i class="fas fa-tools mr-2 text-red-500"></i>Troubleshooting
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Content -->
+            <main class="lg:w-3/4">
+                <!-- Getting Started -->
+                <section id="getting-started" class="mb-12">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-rocket text-purple-600 mr-3"></i>Getting Started
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="font-bold mb-3">System Requirements</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold mb-2">Desktop</h4>
+                                        <ul class="text-sm space-y-1">
+                                            <li>✓ Chrome, Firefox, Safari, Edge (latest)</li>
+                                            <li>✓ Minimum 1366x768 resolution</li>
+                                            <li>✓ JavaScript enabled</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold mb-2">Mobile</h4>
+                                        <ul class="text-sm space-y-1">
+                                            <li>✓ iOS 12+ or Android 8+</li>
+                                            <li>✓ 3G internet or better</li>
+                                            <li>✓ Camera for QR scanning</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-bold mb-3">First Time Setup</h3>
+                                <ol class="space-y-3">
+                                    <li class="flex">
+                                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mr-3 text-sm">1</span>
+                                        <div>
+                                            <strong>Visit the Platform</strong>
+                                            <p class="text-sm text-gray-600">Go to <a href="https://kfar-final.vercel.app" class="text-blue-600 hover:underline">kfar-final.vercel.app</a></p>
+                                        </div>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mr-3 text-sm">2</span>
+                                        <div>
+                                            <strong>Choose Your Role</strong>
+                                            <p class="text-sm text-gray-600">Select Customer or Vendor from the homepage</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex">
+                                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0 mr-3 text-sm">3</span>
+                                        <div>
+                                            <strong>Complete Registration</strong>
+                                            <p class="text-sm text-gray-600">Follow the onboarding process</p>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Customer Guide -->
+                <section id="customer-guide" class="mb-12">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-user text-blue-600 mr-3"></i>Customer Guide
+                        </h2>
+                        
+                        <div class="space-y-8">
+                            <!-- Registration -->
+                            <div>
+                                <h3 class="font-bold mb-4 text-lg">1. Registration & Onboarding</h3>
+                                
+                                <div class="bg-blue-50 rounded-lg p-6 mb-4">
+                                    <h4 class="font-semibold mb-3">Step-by-Step Registration</h4>
+                                    <ol class="space-y-2 text-sm">
+                                        <li><strong>1.</strong> Click "Join as Customer" on homepage</li>
+                                        <li><strong>2.</strong> Enter your details:
+                                            <ul class="ml-6 mt-1">
+                                                <li>• Full Name</li>
+                                                <li>• Email Address</li>
+                                                <li>• Phone Number</li>
+                                                <li>• Create Password</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>3.</strong> Verify your email</li>
+                                        <li><strong>4.</strong> Complete your profile</li>
+                                        <li><strong>5.</strong> Get your personal QR code</li>
+                                    </ol>
+                                </div>
+                                
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="border rounded-lg p-4">
+                                        <h5 class="font-semibold mb-2">Profile Setup</h5>
+                                        <ul class="text-sm space-y-1">
+                                            <li>📸 Upload avatar for personalization</li>
+                                            <li>🥗 Set dietary preferences</li>
+                                            <li>📍 Add delivery location</li>
+                                            <li>🔔 Configure notifications</li>
+                                        </ul>
+                                    </div>
+                                    <div class="border rounded-lg p-4">
+                                        <h5 class="font-semibold mb-2">QR Code Benefits</h5>
+                                        <ul class="text-sm space-y-1">
+                                            <li>⚡ Quick checkout at vendors</li>
+                                            <li>🎁 Automatic loyalty points</li>
+                                            <li>📱 Mobile wallet compatible</li>
+                                            <li>🔒 Secure identification</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Shopping -->
+                            <div>
+                                <h3 class="font-bold mb-4 text-lg">2. Shopping Experience</h3>
+                                
+                                <div class="space-y-4">
+                                    <div class="border-l-4 border-blue-600 pl-4">
+                                        <h4 class="font-semibold mb-2">🔍 Finding Products</h4>
+                                        <ul class="text-sm space-y-1">
+                                            <li>• Use search bar for specific items</li>
+                                            <li>• Browse by category or vendor</li>
+                                            <li>• Apply filters (price, dietary, ratings)</li>
+                                            <li>• Scan QR codes for instant info</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="border-l-4 border-purple-600 pl-4">
+                                        <h4 class="font-semibold mb-2">🎤 Voice Shopping</h4>
+                                        <div class="bg-purple-50 rounded-lg p-4">
+                                            <p class="text-sm mb-2">Try these voice commands:</p>
+                                            <ul class="text-sm space-y-1 font-mono">
+                                                <li>"Show me vegan products"</li>
+                                                <li>"I want to buy ice cream"</li>
+                                                <li>"What's on sale today?"</li>
+                                                <li>"Add 2 items to cart"</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="border-l-4 border-green-600 pl-4">
+                                        <h4 class="font-semibold mb-2">🛒 Cart Management</h4>
+                                        <ul class="text-sm space-y-1">
+                                            <li>• View cart from any page</li>
+                                            <li>• Update quantities easily</li>
+                                            <li>• Save items for later</li>
+                                            <li>• Multi-vendor support</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Checkout -->
+                            <div>
+                                <h3 class="font-bold mb-4 text-lg">3. Checkout Process</h3>
+                                
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h5 class="font-semibold mb-2">Payment Methods</h5>
+                                        <ul class="text-sm space-y-1">
+                                            <li>💳 Credit/Debit Cards</li>
+                                            <li>💰 Cash on Delivery</li>
+                                            <li>🎁 KFAR Credits</li>
+                                            <li>📱 Digital Wallets (coming)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h5 class="font-semibold mb-2">Delivery Options</h5>
+                                        <ul class="text-sm space-y-1">
+                                            <li>🏪 Vendor Pickup</li>
+                                            <li>🚚 Home Delivery</li>
+                                            <li>📍 Collection Points</li>
+                                            <li>⏰ Scheduled Times</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Vendor Guide -->
+                <section id="vendor-guide" class="mb-12">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-store text-green-600 mr-3"></i>Vendor Guide
+                        </h2>
+                        
+                        <div class="space-y-8">
+                            <!-- Registration -->
+                            <div>
+                                <h3 class="font-bold mb-4 text-lg">1. Vendor Registration</h3>
+                                
+                                <div class="bg-green-50 rounded-lg p-6">
+                                    <h4 class="font-semibold mb-3">Requirements</h4>
+                                    <ul class="text-sm space-y-1">
+                                        <li>✓ Business registration details</li>
+                                        <li>✓ Tax identification number</li>
+                                        <li>✓ Bank account information</li>
+                                        <li>✓ Business photos/logo</li>
+                                        <li>✓ Product catalog (can add later)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Store Setup -->
+                            <div>
+                                <h3 class="font-bold mb-4 text-lg">2. Store Setup</h3>
+                                
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="border rounded-lg p-4">
+                                        <h5 class="font-semibold mb-2">Store Customization</h5>
+                                        <ul class="text-sm space-y-1">
+                                            <li>🖼️ Logo (500x500px)</li>
+                                            <li>🎨 Banner (1200x400px)</li>
+                                            <li>📝 Store description</li>
+                                            <li>⏰ Operating hours</li>
+                                            <li>🚚 Delivery zones</li>
+                                        </ul>
+                                    </div>
+                                    <div class="border rounded-lg p-4">
+                                        <h5 class="font-semibold mb-2">Product Management</h5>
+                                        <ul class="text-sm space-y-1">
+                                            <li>➕ Add single products</li>
+                                            <li>📊 Bulk CSV upload</li>
+                                            <li>🏷️ Category organization</li>
+                                            <li>💰 Pricing & discounts</li>
+                                            <li>📸 Multiple images</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Order Management -->
+                            <div>
+                                <h3 class="font-bold mb-4 text-lg">3. Order Management</h3>
+                                
+                                <div class="bg-yellow-50 rounded-lg p-6">
+                                    <h4 class="font-semibold mb-3">Order Workflow</h4>
+                                    <ol class="space-y-2 text-sm">
+                                        <li><strong>1. New Order</strong> - Notification received</li>
+                                        <li><strong>2. Review</strong> - Check items and delivery details</li>
+                                        <li><strong>3. Confirm</strong> - Accept or reject order</li>
+                                        <li><strong>4. Prepare</strong> - Update status as preparing</li>
+                                        <li><strong>5. Complete</strong> - Mark as ready/delivered</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Admin Guide -->
+                <section id="admin-guide" class="mb-12">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-user-shield text-purple-600 mr-3"></i>Admin Guide
+                        </h2>
+                        
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="font-bold mb-4 text-lg">Platform Management</h3>
+                                
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-purple-50 rounded-lg p-4">
+                                        <h5 class="font-semibold mb-2">User Management</h5>
+                                        <ul class="text-sm space-y-1">
+                                            <li>• View all customers</li>
+                                            <li>• Approve vendors</li>
+                                            <li>• Handle disputes</li>
+                                            <li>• Ban/unban users</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 rounded-lg p-4">
+                                        <h5 class="font-semibold mb-2">Analytics</h5>
+                                        <ul class="text-sm space-y-1">
+                                            <li>• Sales reports</li>
+                                            <li>• User activity</li>
+                                            <li>• Revenue tracking</li>
+                                            <li>• Growth metrics</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mobile Features -->
+                <section id="mobile-features" class="mb-12">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-mobile-alt text-orange-600 mr-3"></i>Mobile App Features
+                        </h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="font-bold mb-3">Installation</h3>
+                                <div class="space-y-3">
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold mb-2">
+                                            <i class="fab fa-apple mr-2"></i>iOS
+                                        </h4>
+                                        <ol class="text-sm space-y-1">
+                                            <li>1. Open in Safari</li>
+                                            <li>2. Tap Share button</li>
+                                            <li>3. Select "Add to Home Screen"</li>
+                                        </ol>
+                                    </div>
+                                    <div class="bg-gray-50 rounded-lg p-4">
+                                        <h4 class="font-semibold mb-2">
+                                            <i class="fab fa-android text-green-600 mr-2"></i>Android
+                                        </h4>
+                                        <ol class="text-sm space-y-1">
+                                            <li>1. Open in Chrome</li>
+                                            <li>2. Tap menu (3 dots)</li>
+                                            <li>3. Select "Add to Home Screen"</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-bold mb-3">Mobile Features</h3>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span class="text-sm">Bottom navigation for easy access</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span class="text-sm">Pull to refresh content</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span class="text-sm">Offline browsing capability</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span class="text-sm">Camera integration for QR</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                        <span class="text-sm">Push notifications</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Troubleshooting -->
+                <section id="troubleshooting" class="mb-12">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-tools text-red-600 mr-3"></i>Troubleshooting
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-red-600 pl-4">
+                                <h3 class="font-bold mb-2">Can't Login?</h3>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Check email/password spelling</li>
+                                    <li>• Clear browser cache (Ctrl+Shift+R)</li>
+                                    <li>• Try password reset</li>
+                                    <li>• Contact support if issue persists</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="border-l-4 border-yellow-600 pl-4">
+                                <h3 class="font-bold mb-2">QR Code Not Working?</h3>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Ensure good lighting</li>
+                                    <li>• Clean camera lens</li>
+                                    <li>• Grant camera permissions</li>
+                                    <li>• Try regenerating QR code</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <h3 class="font-bold mb-2">Slow Loading?</h3>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Check internet connection</li>
+                                    <li>• Clear app cache</li>
+                                    <li>• Update browser</li>
+                                    <li>• Try mobile data instead of WiFi</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 bg-gray-50 rounded-lg p-6">
+                            <h3 class="font-bold mb-3">🆘 Need More Help?</h3>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div>
+                                    <i class="fas fa-envelope text-purple-600 mr-2"></i>
+                                    <a href="mailto:support@kfarmarket.com" class="text-purple-600 hover:underline">
+                                        support@kfarmarket.com
+                                    </a>
+                                </div>
+                                <div>
+                                    <i class="fab fa-whatsapp text-green-600 mr-2"></i>
+                                    <a href="https://wa.me/972507990372" class="text-green-600 hover:underline">
+                                        +972 50-799-0372
+                                    </a>
+                                </div>
+                                <div>
+                                    <i class="fas fa-comments text-blue-600 mr-2"></i>
+                                    <span>Live Chat: 9am-6pm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pro Tips -->
+                <section class="mb-12">
+                    <div class="bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl p-8">
+                        <h2 class="text-2xl font-bold mb-6">💡 Pro Tips</h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="font-bold mb-3">For Customers</h3>
+                                <ul class="space-y-2 text-sm">
+                                    <li>💝 Save favorites with heart icon</li>
+                                    <li>🔔 Set alerts for out-of-stock items</li>
+                                    <li>🔍 Use filters to save time</li>
+                                    <li>⭐ Check reviews before buying</li>
+                                    <li>👥 Follow vendors for updates</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="font-bold mb-3">For Vendors</h3>
+                                <ul class="space-y-2 text-sm">
+                                    <li>📸 Quality photos increase sales</li>
+                                    <li>📝 Detailed descriptions help</li>
+                                    <li>⚡ Quick response = better ratings</li>
+                                    <li>🔄 Keep inventory updated</li>
+                                    <li>💬 Engage with customers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Back Navigation -->
+    <section class="py-8 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <a href="index.html" class="inline-flex items-center bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition mr-4">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Reports
+            </a>
+            <a href="access.html" class="inline-flex items-center bg-purple-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-700 transition">
+                <i class="fas fa-key mr-2"></i>Access Portal
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">© 2024 KFAR Marketplace. All rights reserved.</p>
+            <p class="text-sm opacity-75">
+                Complete User Guide | Version 1.0
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Highlight active section in TOC
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.toc-item');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('bg-purple-100', 'text-purple-700');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('bg-purple-100', 'text-purple-700');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
