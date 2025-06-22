@@ -31,9 +31,90 @@
         .pulse {
             animation: pulse 2s infinite;
         }
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            backdrop-filter: blur(10px);
+        }
+        .nav-link {
+            scroll-behavior: smooth;
+        }
+        .nav-link.active {
+            background-color: rgba(109, 40, 217, 0.1);
+            color: #7c3aed;
+            border-left: 3px solid #7c3aed;
+        }
+        .section-divider {
+            position: relative;
+            margin: 4rem 0;
+        }
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Fixed Top Navigation -->
+    <nav class="nav-sticky bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-purple-600">KFAR</span>
+                    <span class="ml-2 text-sm text-gray-600">Access Portal</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#live-app" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 transition">Live App</a>
+                    <a href="#credentials" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 transition">Credentials</a>
+                    <a href="#api-keys" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 transition">API Keys</a>
+                    <a href="#quick-start" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 transition">Quick Start</a>
+                    <a href="#features" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 transition">Features</a>
+                    <a href="index.html" class="bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-700 transition">
+                        <i class="fas fa-home mr-2"></i>Reports Hub
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#live-app" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 transition">Live App</a>
+                <a href="#credentials" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 transition">Credentials</a>
+                <a href="#api-keys" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 transition">API Keys</a>
+                <a href="#quick-start" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 transition">Quick Start</a>
+                <a href="#features" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-purple-600 transition">Features</a>
+                <a href="index.html" class="block mt-2 bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-purple-700 transition text-center">
+                    <i class="fas fa-home mr-2"></i>Reports Hub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="bg-gray-100 py-3 border-b">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-purple-600 transition">
+                    <i class="fas fa-home"></i>
+                </a>
+                <span class="mx-2 text-gray-400">/</span>
+                <span class="text-gray-800 font-medium">Access Portal</span>
+            </nav>
+        </div>
+    </div>
+
     <!-- Header -->
     <div class="gradient-bg text-white">
         <div class="container mx-auto px-4 py-12">
@@ -47,8 +128,36 @@
         </div>
     </div>
 
+    <!-- Quick Access Cards -->
+    <section class="py-8 -mt-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-4">
+                <a href="#live-app" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition">
+                    <i class="fas fa-rocket text-3xl text-purple-600 mb-3"></i>
+                    <h3 class="font-semibold">Live Application</h3>
+                    <p class="text-sm text-gray-600 mt-1">Access the platform</p>
+                </a>
+                <a href="#credentials" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition">
+                    <i class="fas fa-key text-3xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold">Login Credentials</h3>
+                    <p class="text-sm text-gray-600 mt-1">User accounts</p>
+                </a>
+                <a href="#quick-start" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition">
+                    <i class="fas fa-play-circle text-3xl text-green-600 mb-3"></i>
+                    <h3 class="font-semibold">Quick Start</h3>
+                    <p class="text-sm text-gray-600 mt-1">Get started guide</p>
+                </a>
+                <a href="#features" class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition">
+                    <i class="fas fa-star text-3xl text-yellow-500 mb-3"></i>
+                    <h3 class="font-semibold">Key Features</h3>
+                    <p class="text-sm text-gray-600 mt-1">Platform highlights</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Live Application Section -->
-    <section class="py-12">
+    <section id="live-app" class="py-12">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">🌐 Live Application</h2>
             
@@ -67,29 +176,23 @@
                         </a>
                     </div>
                     
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <h5 class="font-semibold mb-2">Alternative URLs:</h5>
-                            <ul class="text-sm space-y-1">
-                                <li><a href="https://kfar-shop.vercel.app" target="_blank" class="text-blue-600 hover:underline">kfar-shop.vercel.app</a></li>
-                                <li><a href="https://kfar-shop-clean-repo.vercel.app" target="_blank" class="text-blue-600 hover:underline">kfar-shop-clean-repo.vercel.app</a></li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <h5 class="font-semibold mb-2">Mobile Installation:</h5>
-                            <ul class="text-sm space-y-1">
-                                <li><i class="fab fa-apple text-gray-600 mr-2"></i>iOS: Share → Add to Home</li>
-                                <li><i class="fab fa-android text-green-600 mr-2"></i>Android: Menu → Add to Home</li>
-                            </ul>
-                        </div>
+                    <div class="bg-gray-50 rounded-lg p-4 mt-4">
+                        <h5 class="font-semibold mb-2">Mobile Installation:</h5>
+                        <ul class="text-sm space-y-1">
+                            <li><i class="fab fa-apple text-gray-600 mr-2"></i>iOS: Share → Add to Home Screen</li>
+                            <li><i class="fab fa-android text-green-600 mr-2"></i>Android: Menu → Add to Home Screen</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-2">Install as a PWA for the best mobile experience</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- Password Protection -->
-    <section class="py-12 bg-gray-100">
+    <section id="credentials" class="py-12 bg-gray-100">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">🔐 Login Credentials</h2>
             
@@ -203,8 +306,10 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- API Keys Section (For Admin Only) -->
-    <section id="apiKeysSection" class="py-12 bg-gray-100 locked" style="display: none;">
+    <section id="api-keys" class="py-12 bg-gray-100 locked" style="display: none;">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">🔑 API Keys & Configuration</h2>
             
@@ -248,8 +353,10 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
     <!-- Quick Start Guide -->
-    <section class="py-12">
+    <section id="quick-start" class="py-12">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">🚀 Quick Start Guide</h2>
             
@@ -305,14 +412,69 @@
         </div>
     </section>
 
-    <!-- Back to Reports -->
-    <section class="py-8 bg-gray-100">
-        <div class="container mx-auto px-4 text-center">
-            <a href="index.html" class="inline-flex items-center bg-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition">
-                <i class="fas fa-arrow-left mr-2"></i>Back to Project Reports
-            </a>
+    <div class="section-divider"></div>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">✨ Key Features</h2>
+            
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-microphone-alt text-4xl text-purple-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Voice Commerce</h3>
+                    <p class="text-gray-600 text-sm">Shop hands-free in 11 languages including Hebrew and English</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-brain text-4xl text-blue-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">AI Assistant</h3>
+                    <p class="text-gray-600 text-sm">Intelligent product recommendations and dietary compliance</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-qrcode text-4xl text-green-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">QR/NFC Technology</h3>
+                    <p class="text-gray-600 text-sm">Instant vendor and product information access</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-mobile-alt text-4xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Mobile First</h3>
+                    <p class="text-gray-600 text-sm">Progressive Web App with offline capabilities</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-chart-line text-4xl text-red-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Real-time Analytics</h3>
+                    <p class="text-gray-600 text-sm">Comprehensive business insights and tracking</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-shield-alt text-4xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Secure Platform</h3>
+                    <p class="text-gray-600 text-sm">Enterprise-grade security with role-based access</p>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition opacity-0 pointer-events-none">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Footer -->
     <footer class="gradient-bg text-white py-8">
@@ -325,6 +487,14 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
         // Simple password protection
         function unlockCredentials() {
             const code = document.getElementById('accessCode').value;
@@ -337,8 +507,8 @@
                 
                 // Show API keys for admin code
                 if (code.toLowerCase() === 'admin123') {
-                    document.getElementById('apiKeysSection').style.display = 'block';
-                    document.getElementById('apiKeysSection').classList.remove('locked');
+                    document.getElementById('api-keys').style.display = 'block';
+                    document.getElementById('api-keys').classList.remove('locked');
                 }
                 
                 // Smooth scroll to credentials
@@ -356,6 +526,64 @@
             if (e.key === 'Enter') {
                 unlockCredentials();
             }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+                backToTopButton.classList.remove('opacity-100');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Update active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
